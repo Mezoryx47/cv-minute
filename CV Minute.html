@@ -1,0 +1,438 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>CV Minute</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Mise en page : formulaire à gauche, feuille A4 en aperçu direct à droite. Sur téléphone, deux onglets (Remplir / Aperçu). */
+:root {
+  --bg: #f1f4f0;
+  --surface: #ffffff;
+  --fg: #14231a;
+  --muted: #55655b;
+  --line: #d5dcd3;
+  --accent: #0b6b3a;
+  --accent-fg: #ffffff;
+  --gold: #c98a0b;
+  --gold-soft: #fbf1d9;
+  --danger: #b3261e;
+  --paper: #ffffff;
+  --paper-ink: #1c2a22;
+  --paper-muted: #5b6a61;
+  --font-display: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1612; --surface: #172019; --fg: #e8efe9; --muted: #9bab9f; --line: #2b3a2f;
+    --accent: #4fc883; --accent-fg: #0a1a10; --gold: #e5b04a; --gold-soft: #2c2410; --danger: #f2897f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1612; --surface: #172019; --fg: #e8efe9; --muted: #9bab9f; --line: #2b3a2f;
+  --accent: #4fc883; --accent-fg: #0a1a10; --gold: #e5b04a; --gold-soft: #2c2410; --danger: #f2897f;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.5;
+  padding-block: 0 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+button { font: inherit; cursor: pointer; }
+
+.top { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-block: 18px; }
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand-mark { width: 34px; height: 34px; border-radius: 9px; background: var(--accent); color: var(--accent-fg); display: grid; place-items: center; font-family: var(--font-display); font-weight: 800; font-size: 15px; }
+.brand h1 { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; }
+.tagline { color: var(--muted); font-size: 14px; margin: 0; }
+
+.tabs { display: none; max-width: 1280px; margin: 0 auto 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 4px; gap: 4px; }
+.tabs button { flex: 1; border: 0; background: transparent; color: var(--muted); padding: 10px; border-radius: 7px; font-weight: 600; }
+.tabs button[aria-selected="true"] { background: var(--accent); color: var(--accent-fg); }
+
+.layout { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 480px) minmax(0, 1fr); gap: 28px; align-items: start; }
+.panel { min-width: 0; }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+.stack { display: flex; flex-direction: column; gap: 16px; }
+.card h2 { font-size: 17px; font-weight: 700; }
+.row2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+label { display: flex; flex-direction: column; gap: 5px; font-size: 13px; font-weight: 600; color: var(--muted); min-width: 0; }
+input, textarea, select {
+  font: inherit; font-weight: 400; color: var(--fg); background: var(--bg); border: 1px solid var(--line);
+  border-radius: 8px; padding: 9px 11px; width: 100%; min-width: 0;
+}
+textarea { resize: vertical; min-height: 84px; }
+input::placeholder, textarea::placeholder { color: var(--muted); opacity: .7; }
+
+.tpl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.tpl button { background: var(--bg); border: 2px solid var(--line); border-radius: 10px; padding: 10px 8px; color: var(--fg); display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; position: relative; }
+.tpl button[aria-pressed="true"] { border-color: var(--accent); }
+.thumb { width: 100%; aspect-ratio: 3 / 4; background: #fff; border-radius: 4px; border: 1px solid var(--line); display: grid; padding: 6px; gap: 4px; align-content: start; }
+.thumb i { display: block; height: 4px; background: #b9c4bc; border-radius: 2px; }
+.thumb i.h { height: 7px; background: #0b6b3a; width: 60%; }
+.thumb.side { grid-template-columns: 34% 1fr; align-content: stretch; }
+.thumb.side b { background: #0b6b3a; border-radius: 2px; }
+.thumb.side div { display: grid; gap: 4px; align-content: start; }
+.badge { position: absolute; top: -8px; right: -6px; background: var(--gold); color: #fff; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; padding: 2px 7px; border-radius: 999px; font-weight: 700; }
+
+.item { border: 1px solid var(--line); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 10px; background: var(--bg); }
+.item input, .item textarea { background: var(--surface); }
+.item-head { display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.link-btn { background: transparent; border: 0; color: var(--danger); font-size: 13px; font-weight: 600; padding: 4px 6px; border-radius: 6px; }
+.add-btn { background: transparent; border: 1.5px dashed var(--accent); color: var(--accent); border-radius: 10px; padding: 10px; font-weight: 600; }
+.hint { font-size: 12.5px; color: var(--muted); margin: 0; }
+
+.premium { background: var(--gold-soft); border: 1px solid var(--gold); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+.premium h2 { font-size: 16px; }
+.premium ul { margin: 0; padding-left: 18px; color: var(--fg); font-size: 14px; }
+.premium .soon { align-self: flex-start; font-size: 12px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: .06em; }
+.ad { border: 1px dashed var(--line); border-radius: 10px; min-height: 90px; display: grid; place-items: center; color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; text-align: center; padding: 10px; }
+
+.preview-bar { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+.preview-bar h2 { font-size: 17px; }
+.export { background: var(--accent); color: var(--accent-fg); border: 0; padding: 11px 18px; border-radius: 9px; font-weight: 700; }
+.export[disabled] { opacity: .55; cursor: not-allowed; }
+.notice { font-size: 13px; color: var(--muted); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 9px 12px; margin: 0 0 14px; }
+.notice.warn { border-color: var(--gold); background: var(--gold-soft); color: var(--fg); }
+
+.paper-wrap { width: 100%; overflow: hidden; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 10px 30px rgba(0,0,0,.12); background: var(--paper); }
+.paper { width: 794px; min-height: 1123px; transform-origin: top left; background: var(--paper); color: var(--paper-ink); font-family: var(--font-body); font-size: 13.5px; line-height: 1.5; padding: 56px 58px; }
+.paper h1 { font-size: 34px; font-weight: 800; letter-spacing: -0.015em; line-height: 1.1; color: var(--paper-ink); }
+.paper .titre { font-size: 16px; color: #0b6b3a; font-weight: 600; margin: 6px 0 0; }
+.paper .contact { color: var(--paper-muted); margin: 8px 0 0; font-size: 12.5px; }
+.paper h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .14em; color: #0b6b3a; margin: 24px 0 8px; padding-bottom: 5px; border-bottom: 2px solid #0b6b3a; font-weight: 800; }
+.paper .entry { margin-bottom: 12px; break-inside: avoid; }
+.paper .entry-top { display: flex; justify-content: space-between; gap: 12px; font-weight: 600; }
+.paper .entry-top span:last-child { color: var(--paper-muted); font-weight: 400; white-space: nowrap; font-size: 12.5px; }
+.paper .entry-sub { color: var(--paper-muted); }
+.paper p { margin: 4px 0 0; white-space: pre-line; }
+.paper ul.chips { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.paper ul.chips li { border: 1px solid #b7c6bb; border-radius: 4px; padding: 2px 9px; font-size: 12.5px; }
+
+.paper.t-moderne { padding: 0; display: grid; grid-template-columns: 250px 1fr; }
+.paper.t-moderne aside { background: #0b6b3a; color: #fff; padding: 56px 24px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.paper.t-moderne aside h3 { color: #fff; border-bottom-color: rgba(255,255,255,.45); margin-top: 0; }
+.paper.t-moderne aside h3 + * { margin-bottom: 0; }
+.paper.t-moderne aside .block { margin-bottom: 26px; }
+.paper.t-moderne aside p { margin: 0 0 4px; white-space: normal; word-break: break-word; font-size: 12.5px; }
+.paper.t-moderne aside ul.chips li { border-color: rgba(255,255,255,.55); color: #fff; }
+.paper.t-moderne .main { padding: 56px 40px 56px 36px; }
+.paper.t-moderne .main h3 { margin-top: 24px; }
+
+@media (max-width: 900px) {
+  .tabs { display: flex; }
+  .layout { grid-template-columns: minmax(0, 1fr); }
+  .layout[data-view="form"] .panel-preview { display: none; }
+  .layout[data-view="preview"] .panel-form { display: none; }
+}
+@media (max-width: 420px) {
+  .row2 { grid-template-columns: minmax(0, 1fr); }
+}
+@media print {
+  @page { size: A4; margin: 0; }
+  body { background: #fff; padding: 0; }
+  .no-print { display: none !important; }
+  .layout { display: block; }
+  .layout .panel-form { display: none !important; }
+  .layout .panel-preview { display: block !important; }
+  .paper-wrap { box-shadow: none; border-radius: 0; height: auto !important; overflow: visible; }
+  .paper { transform: none !important; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+
+<header class="top no-print">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">CV</div>
+    <div>
+      <h1>CV Minute</h1>
+      <p class="tagline">Un CV propre en quelques minutes, gratuit.</p>
+    </div>
+  </div>
+</header>
+
+<div class="tabs no-print" role="tablist" aria-label="Affichage">
+  <button role="tab" id="tab-form" aria-selected="true" type="button">Remplir</button>
+  <button role="tab" id="tab-preview" aria-selected="false" type="button">Aperçu</button>
+</div>
+
+<main class="layout" id="layout" data-view="form">
+  <section class="panel panel-form no-print stack" aria-label="Formulaire">
+
+    <div class="card">
+      <h2>Modèle</h2>
+      <div class="tpl" id="tpl">
+        <button type="button" data-tpl="classique" aria-pressed="true">
+          <span class="thumb"><i class="h"></i><i></i><i></i><i></i><i></i></span>Classique
+        </button>
+        <button type="button" data-tpl="moderne" aria-pressed="false">
+          <span class="thumb side"><b></b><div><i class="h"></i><i></i><i></i><i></i></div></span>Moderne
+        </button>
+        <button type="button" data-tpl="elegant" aria-pressed="false">
+          <span class="thumb"><i class="h" style="width:40%"></i><i></i><i></i><i></i></span>Élégant
+          <span class="badge">Premium</span>
+        </button>
+      </div>
+      <p class="hint" id="tpl-note" hidden>Le modèle Élégant arrive avec la version Premium.</p>
+    </div>
+
+    <div class="card">
+      <h2>Vous</h2>
+      <div class="row2">
+        <label for="nom">Nom complet<input id="nom" data-k="nom" autocomplete="name" placeholder="Prénom Nom"></label>
+        <label for="titre">Poste visé<input id="titre" data-k="titre" placeholder="Ex. Comptable"></label>
+      </div>
+      <div class="row2">
+        <label for="tel">Téléphone<input id="tel" data-k="tel" type="tel" autocomplete="tel" placeholder="+226 70 00 00 00"></label>
+        <label for="email">E-mail<input id="email" data-k="email" type="email" autocomplete="email" placeholder="nom@exemple.com"></label>
+      </div>
+      <label for="ville">Ville<input id="ville" data-k="ville" autocomplete="address-level2" placeholder="Ouagadougou, Burkina Faso"></label>
+      <label for="resume">Profil
+        <textarea id="resume" data-k="resume" placeholder="Deux ou trois phrases sur vous et ce que vous cherchez."></textarea>
+      </label>
+    </div>
+
+    <div class="card">
+      <h2>Expériences</h2>
+      <div id="exp-list" class="stack"></div>
+      <button type="button" class="add-btn" id="add-exp">+ Ajouter une expérience</button>
+    </div>
+
+    <div class="card">
+      <h2>Formation</h2>
+      <div id="edu-list" class="stack"></div>
+      <button type="button" class="add-btn" id="add-edu">+ Ajouter une formation</button>
+    </div>
+
+    <div class="card">
+      <h2>Compétences et langues</h2>
+      <label for="competences">Compétences
+        <input id="competences" data-k="competences" placeholder="Excel, Word, Gestion de caisse">
+      </label>
+      <label for="langues">Langues
+        <input id="langues" data-k="langues" placeholder="Français (courant), Mooré, Anglais (notions)">
+      </label>
+      <p class="hint">Séparez chaque élément par une virgule.</p>
+    </div>
+
+    <div class="premium">
+      <span class="soon">Bientôt</span>
+      <h2>CV Minute Premium</h2>
+      <ul>
+        <li>Modèles supplémentaires</li>
+        <li>Sans publicité</li>
+        <li>Lettre de motivation générée</li>
+      </ul>
+    </div>
+
+    <div class="ad" role="complementary" aria-label="Espace publicitaire">Espace publicitaire</div>
+  </section>
+
+  <section class="panel panel-preview" aria-label="Aperçu du CV">
+    <div class="preview-bar no-print">
+      <h2>Aperçu</h2>
+      <button type="button" class="export" id="export">Exporter en PDF</button>
+    </div>
+    <p class="notice warn no-print" id="frame-note" hidden>L'export PDF fonctionne quand cette page est hébergée sur votre propre site. Ici, vous voyez l'aperçu.</p>
+    <p class="notice no-print" id="print-note" hidden>Dans la fenêtre d'impression, choisissez « Enregistrer au format PDF » et désactivez les en-têtes et pieds de page.</p>
+    <div class="paper-wrap" id="wrap">
+      <article class="paper t-classique" id="paper"></article>
+    </div>
+  </section>
+</main>
+
+<script>
+(function () {
+  var STORE = "cv-minute-brouillon";
+  var sample = {
+    tpl: "classique",
+    nom: "Aminata Ouédraogo",
+    titre: "Assistante comptable",
+    tel: "+226 70 00 00 00",
+    email: "aminata@exemple.com",
+    ville: "Ouagadougou, Burkina Faso",
+    resume: "Comptable rigoureuse avec 4 ans d'expérience en tenue de caisse et suivi de factures. Je cherche un poste stable en entreprise à Ouagadougou.",
+    exp: [
+      { poste: "Assistante comptable", org: "Société Faso Négoce", periode: "2022 - 2025", desc: "Saisie des factures et suivi des paiements clients.\nRapprochement bancaire mensuel." },
+      { poste: "Caissière", org: "Boutique Wend-Panga", periode: "2020 - 2022", desc: "Encaissements quotidiens et inventaire hebdomadaire." }
+    ],
+    edu: [
+      { diplome: "BTS Comptabilité et Gestion", org: "Université Ouaga 1", periode: "2018 - 2020" }
+    ],
+    competences: "Excel, Word, Gestion de caisse, Facturation",
+    langues: "Français (courant), Mooré (langue maternelle), Anglais (notions)"
+  };
+
+  var s;
+  try { s = JSON.parse(localStorage.getItem(STORE)); } catch (e) { s = null; }
+  if (!s || typeof s !== "object") s = JSON.parse(JSON.stringify(sample));
+  if (s.tpl === "elegant") s.tpl = "classique";
+
+  function save() { try { localStorage.setItem(STORE, JSON.stringify(s)); } catch (e) {} }
+  function esc(t) {
+    return String(t == null ? "" : t).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function split(t) { return String(t || "").split(",").map(function (x) { return x.trim(); }).filter(Boolean); }
+
+  var paper = document.getElementById("paper");
+  var wrap = document.getElementById("wrap");
+
+  function entries(list, a, b) {
+    return list.filter(function (x) { return x[a] || x[b]; }).map(function (x) {
+      return '<div class="entry"><div class="entry-top"><span>' + esc(x[a]) + '</span><span>' + esc(x.periode) + '</span></div>' +
+        (x.org ? '<div class="entry-sub">' + esc(x.org) + '</div>' : '') +
+        (x.desc ? '<p>' + esc(x.desc) + '</p>' : '') + '</div>';
+    }).join("");
+  }
+  function chips(arr) { return arr.length ? '<ul class="chips">' + arr.map(function (c) { return "<li>" + esc(c) + "</li>"; }).join("") + "</ul>" : ""; }
+
+  function renderPreview() {
+    var contact = [s.tel, s.email, s.ville].filter(Boolean);
+    var comp = split(s.competences), lang = split(s.langues);
+    var exp = entries(s.exp, "poste", "org"), edu = entries(s.edu, "diplome", "org");
+    var head = '<h1>' + esc(s.nom || "Votre nom") + '</h1>' + (s.titre ? '<p class="titre">' + esc(s.titre) + '</p>' : '');
+    var html;
+    if (s.tpl === "moderne") {
+      paper.className = "paper t-moderne";
+      html = '<aside>' +
+        (contact.length ? '<div class="block"><h3>Contact</h3>' + contact.map(function (c) { return "<p>" + esc(c) + "</p>"; }).join("") + '</div>' : '') +
+        (comp.length ? '<div class="block"><h3>Compétences</h3>' + chips(comp) + '</div>' : '') +
+        (lang.length ? '<div class="block"><h3>Langues</h3>' + chips(lang) + '</div>' : '') +
+        '</aside><div class="main">' + head +
+        (s.resume ? '<h3>Profil</h3><p>' + esc(s.resume) + '</p>' : '') +
+        (exp ? '<h3>Expérience</h3>' + exp : '') +
+        (edu ? '<h3>Formation</h3>' + edu : '') + '</div>';
+    } else {
+      paper.className = "paper t-classique";
+      html = head + (contact.length ? '<p class="contact">' + contact.map(esc).join("  ·  ") + '</p>' : '') +
+        (s.resume ? '<h3>Profil</h3><p>' + esc(s.resume) + '</p>' : '') +
+        (exp ? '<h3>Expérience</h3>' + exp : '') +
+        (edu ? '<h3>Formation</h3>' + edu : '') +
+        (comp.length ? '<h3>Compétences</h3>' + chips(comp) : '') +
+        (lang.length ? '<h3>Langues</h3>' + chips(lang) : '');
+    }
+    paper.innerHTML = html;
+    fit();
+  }
+
+  function fit() {
+    var printing = window.matchMedia && window.matchMedia("print").matches;
+    if (printing) return;
+    var w = wrap.clientWidth;
+    if (!w) return;
+    var k = Math.min(1, w / 794);
+    paper.style.transform = "scale(" + k + ")";
+    wrap.style.height = Math.ceil(paper.offsetHeight * k) + "px";
+  }
+  window.addEventListener("resize", fit);
+  window.addEventListener("beforeprint", function () { paper.style.transform = "none"; wrap.style.height = "auto"; });
+  window.addEventListener("afterprint", fit);
+
+  /* champs simples */
+  document.querySelectorAll("[data-k]").forEach(function (el) {
+    el.value = s[el.getAttribute("data-k")] || "";
+    el.addEventListener("input", function () { s[el.getAttribute("data-k")] = el.value; save(); renderPreview(); });
+  });
+
+  /* listes dynamiques */
+  var lists = {
+    exp: { el: document.getElementById("exp-list"), a: "poste", aLabel: "Poste", aPh: "Ex. Vendeur", bLabel: "Entreprise", bPh: "Nom de l'entreprise", desc: true, title: "Expérience" },
+    edu: { el: document.getElementById("edu-list"), a: "diplome", aLabel: "Diplôme", aPh: "Ex. BAC série D", bLabel: "École", bPh: "Nom de l'établissement", desc: false, title: "Formation" }
+  };
+
+  function renderList(key) {
+    var L = lists[key], box = L.el;
+    box.innerHTML = "";
+    (s[key] || []).forEach(function (item, i) {
+      var d = document.createElement("div");
+      d.className = "item";
+      var id = key + "-" + i;
+      d.innerHTML =
+        '<div class="item-head"><span>' + L.title + " " + (i + 1) + '</span><button type="button" class="link-btn" data-del="' + i + '">Supprimer</button></div>' +
+        '<div class="row2">' +
+        '<label for="' + id + '-a">' + L.aLabel + '<input id="' + id + '-a" data-f="' + L.a + '" placeholder="' + L.aPh + '"></label>' +
+        '<label for="' + id + '-b">' + L.bLabel + '<input id="' + id + '-b" data-f="org" placeholder="' + L.bPh + '"></label>' +
+        '</div>' +
+        '<label for="' + id + '-p">Période<input id="' + id + '-p" data-f="periode" placeholder="2021 - 2024"></label>' +
+        (L.desc ? '<label for="' + id + '-d">Missions<textarea id="' + id + '-d" data-f="desc" placeholder="Une mission par ligne."></textarea></label>' : '');
+      d.querySelectorAll("[data-f]").forEach(function (inp) {
+        var f = inp.getAttribute("data-f");
+        inp.value = item[f] || "";
+        inp.addEventListener("input", function () { item[f] = inp.value; save(); renderPreview(); });
+      });
+      d.querySelector("[data-del]").addEventListener("click", function () {
+        s[key].splice(i, 1); save(); renderList(key); renderPreview();
+      });
+      box.appendChild(d);
+    });
+    if (!(s[key] || []).length) {
+      var p = document.createElement("p");
+      p.className = "hint";
+      p.textContent = key === "exp" ? "Aucune expérience. Ajoutez-en une, ou passez si vous débutez." : "Aucune formation ajoutée.";
+      box.appendChild(p);
+    }
+  }
+  document.getElementById("add-exp").addEventListener("click", function () {
+    (s.exp = s.exp || []).push({ poste: "", org: "", periode: "", desc: "" }); save(); renderList("exp"); renderPreview();
+  });
+  document.getElementById("add-edu").addEventListener("click", function () {
+    (s.edu = s.edu || []).push({ diplome: "", org: "", periode: "" }); save(); renderList("edu"); renderPreview();
+  });
+
+  /* modèles */
+  var tplBtns = document.querySelectorAll("#tpl button");
+  var tplNote = document.getElementById("tpl-note");
+  function syncTpl() {
+    tplBtns.forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-tpl") === s.tpl)); });
+  }
+  tplBtns.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var t = b.getAttribute("data-tpl");
+      if (t === "elegant") { tplNote.hidden = false; return; }
+      tplNote.hidden = true; s.tpl = t; save(); syncTpl(); renderPreview();
+    });
+  });
+
+  /* onglets téléphone */
+  var layout = document.getElementById("layout");
+  var tabF = document.getElementById("tab-form"), tabP = document.getElementById("tab-preview");
+  function view(v) {
+    layout.setAttribute("data-view", v);
+    tabF.setAttribute("aria-selected", String(v === "form"));
+    tabP.setAttribute("aria-selected", String(v === "preview"));
+    setTimeout(fit, 0);
+  }
+  tabF.addEventListener("click", function () { view("form"); });
+  tabP.addEventListener("click", function () { view("preview"); });
+
+  /* export PDF : fonctionne sur une page hébergée, pas dans un cadre restreint */
+  var inFrame = false;
+  try { inFrame = window.self !== window.top; } catch (e) { inFrame = true; }
+  var exp = document.getElementById("export");
+  if (inFrame) {
+    exp.disabled = true;
+    exp.textContent = "Export PDF (sur votre site)";
+    document.getElementById("frame-note").hidden = false;
+  } else {
+    exp.addEventListener("click", function () {
+      document.getElementById("print-note").hidden = false;
+      window.print();
+    });
+  }
+
+  syncTpl(); renderList("exp"); renderList("edu"); renderPreview();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  window.addEventListener("load", fit);
+})();
+</script>
+
+</body></html>
